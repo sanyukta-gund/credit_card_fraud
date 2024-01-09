@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Credit Card Fraud Project</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: url("static/images/image1.png") no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            margin-top: 56px;
+        }
+
+        .navbar {
+            padding: 10px 20px; /* Added padding to increase the navbar size */
+        }
+
+        .navbar-brand {
+            font-size: 24px; /* Increased font size for the brand */
+            margin-right: 20px; /* Added margin to separate brand from other elements */
+        }
+
+        .navbar-nav {
+            font-size: 18px; /* Increased font size for the nav items */
+            
+        }
+        .navbar-nav .nav-item {
+            margin-bottom: 0px; /* Removed margin between navbar items */
+
+
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Your App Name</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav"> <!-- Added ml-auto to push the elements to the right -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-4ss">
+        <div class="row justify-content-center">
+            <div class="col-md-6 form-container">
+                <h1 class="text-center mb-4">Credit Card Fraud Detection</h1>
+                <form action="/predict" method="post" >
+                    <!-- Form elements go here -->
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="merchant">merchant</label>
+                            <input type="text" class="form-control" id="merchant" placeholder="merchant" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="category">category</label>
+                            <input type="text" class="form-control" id="category" placeholder="category" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="amount">amount</label>
+                            <input type="number" step="0.01" class="form-control" id="amt" placeholder="Amount" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="city">city</label>
+                            <input type="text" class="form-control" id="city" placeholder="city" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="zip">zip</label>
+                            <input type="number" class="form-control" id="zip" placeholder="zip" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="lat">lat</label>
+                            <input type="number" step="0.000001" class="form-control" id="lat" placeholder="lat" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="long">long</label>
+                            <input type="number"  step="0.000001" class="form-control" id="long" placeholder="long" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="city_pop">city_pop</label>
+                            <input type="number" class="form-control" id="city_pop" placeholder="city_pop" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="job">job</label>
+                            <input type="text" class="form-control" id="job" placeholder="job" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="merch_lat">merch_lat</label>
+                            <input type="number" step="0.000001"  class="form-control" id="merch_lat" placeholder="merch_lat" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="merch_long">merch_long</label>
+                            <input type="number" step="0.000001"  class="form-control" id="merch_long" placeholder="merch_long" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="hours">hours</label>
+                            <input type="number" class="form-control" id="hours" placeholder="hours" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="day">day</label>
+                            <input type="number" class="form-control" id="day" placeholder="day" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="month">month</label>
+                            <input type="number" class="form-control" id="month" placeholder="month" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="hours_bet_transaction">hours_bet_transaction</label>
+                            <input type="number" class="form-control" id="hours_bet_transaction" placeholder="hours_bet_transaction" required>
+                        </div>
+                        
+                        
+                    </div>
+
+                   
+
+                    <button type="submit" class="btn btn-primary">Predict</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
